@@ -10,6 +10,7 @@ import { ProductInfoComponent } from './components/product-info/product-info.com
 import { AddProductAdminComponent } from './components/add-product-admin/add-product-admin.component';
 import { UpdateProductAdminComponent } from './components/update-product-admin/update-product-admin.component';
 import { TwoHundredEightComponent } from './components/all-models/two-hundred-eight/two-hundred-eight.component';
+import { TwoThousandEightComponent } from './components/all-models/two-thousand-eight/two-thousand-eight.component';
 
 const routes: Routes = [
   {
@@ -45,8 +46,12 @@ const routes: Routes = [
     component: UpdateProductAdminComponent
   },
   {
-    path: "models/e208",
+    path: "models/208",
     component: TwoHundredEightComponent
+  },
+  {
+    path: "models/2008",
+    component: TwoThousandEightComponent
   }
 
 ];
