@@ -1,0 +1,52 @@
+<div class="container">
+    <h3 class="title">Edit product</h3>
+    <a type="button" id="btn-back" class="btn btn-info" routerLink="/products">Back</a>
+
+     <div *ngIf="updateProductForm.controls['brand'].invalid && (updateProductForm.controls['brand'].dirty || updateProductForm.controls['brand'].touched)" class="alert alert-danger">
+
+        <div *ngIf="updateProductForm.controls['brand'].errors?.['required']">
+            Brand is required.
+        </div>
+    </div>
+
+    <div *ngIf="updateProductForm.controls['model'].invalid && 
+    (updateProductForm.controls['model'].dirty || updateProductForm.controls['model'].touched)"
+        class="alert alert-warning">
+        <div *ngIf="updateProductForm.controls['model'].errors?.['required']">
+            Model is required.
+        </div>
+    </div>
+
+    <form [formGroup]="updateProductForm" action="" (ngSubmit)="updatedFormSubmit()"> 
+        <div class="form-group">
+            <label for="brand">Brand</label>
+            <input formControlName="brand" type="text" class="form-control" [(ngModel)]="product.brand" required minlength="4">
+        </div>
+        <div class="form-group">
+            <label for="model">Model</label>
+            <input formControlName="model" type="text" class="form-control" [(ngModel)]="product.model">
+        </div>
+        <div class="form-group">
+            <label for="fuelType">Fuel Type</label>
+            <input formControlName="fuelType" type="text" class="form-control" [(ngModel)]="product.fuelType">
+        </div>
+        <div class="form-group">
+            <label for="hp">HP</label>
+            <input formControlName="hp" type="text" class="form-control" [(ngModel)]="product.hp">
+        </div>
+        <div class="form-group">
+            <label for="engine">Engine</label>
+            <input formControlName="engine" type="text" class="form-control" [(ngModel)]="product.engine">
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input formControlName="year" type="text" class="form-control" [(ngModel)]="product.year">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input formControlName="price" type="text" class="form-control" [(ngModel)]="product.price">
+        </div>
+        <br>
+        <button class="btn btn-success" id="btn-update" type="submit">Update</button>
+    </form>
+</div>

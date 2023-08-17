@@ -1,0 +1,31 @@
+.card {
+    display: grid;
+    border: none;
+    text-align: center;
+    margin-top: 10px;
+    background-color: white;  
+}
+
+.card-text {
+    text-align: left;
+}
+
+.container {
+    display: flex;
+    background-color: rgb(83, 58, 58);
+    margin: auto;
+
+}
+
+.big-container{
+    background-color: rgb(83, 58, 58);
+}
+
+#card1 {
+    display: grid;
+    border: none;
+    text-align: center;
+    background-color: white;
+    margin-top: 10px; 
+    margin-bottom: 20px;
+}

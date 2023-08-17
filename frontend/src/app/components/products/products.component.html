@@ -1,0 +1,41 @@
+<div class="container" style="margin-left: 30px; margin-right: 30px;">
+    <h3 class="title">Products</h3>
+</div>
+<br>    
+    <a id="btn-add" type="button" class="btn btn-success" style="float: right;" routerLink="/products/add-product">Add product</a>
+    <a id="btn-back" class="btn btn-warning" style="float: right;" routerLink="">Back</a>
+    
+<div>
+    <table class="table table-hover table-bordered border-info" style="width: 60%; height: 20%;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Fuel Type</th>
+                <th>HP</th>
+                <th>Engine</th>
+                <th>Year</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prod of productsList">
+                <td>{{prod.id}}</td>
+                <td>{{prod.brand}}</td>
+                <td>{{prod.model}}</td>
+                <td>{{prod.fuelType}}</td>
+                <td>{{prod.hp}}</td>
+                <td>{{prod.engine}}</td>
+                <td>{{prod.year}}</td>
+                <td>{{prod.price}}</td>
+                <td>
+                    <a type="button" class="btn btn-info btn-space" [routerLink]="['/product/info', prod.id]">Info</a>
+                    <a type="button" class="btn btn-primary btn-space" [routerLink]="['/product/edit', prod.id]">Edit</a>
+                    <button type="button" class="btn btn-danger btn-space" (click)="removeProductById(prod.id)">Delete</button> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

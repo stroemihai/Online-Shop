@@ -1,0 +1,83 @@
+<div class="container body">
+    <a type="button" id="btn-back" class="btn btn-primary" routerLink="/products">Back</a>
+
+    <div *ngIf="newProductForm.controls['brand'].invalid && (newProductForm.controls['brand'].dirty || newProductForm.controls['brand'].touched)"
+        class="alert alert-warning">
+        <div *ngIf="newProductForm.controls['brand'].errors?.['required']">
+            Brand is required.
+        </div>
+    </div>
+
+    <div *ngIf="newProductForm.controls['model'].invalid && (newProductForm.controls['model'].dirty || newProductForm.controls['model'].touched)"
+        class="alert alert-warning">
+        <div *ngIf="newProductForm.controls['model'].errors?.['required']">
+            Model is required.
+        </div>
+    </div>
+    <div *ngIf="newProductForm.controls['fuelType'].invalid && (newProductForm.controls['fuelType'].dirty || newProductForm.controls['fuelType'].touched)"
+        class="alert alert-warning">
+        <div *ngIf="newProductForm.controls['fuelType'].errors?.['required']">
+            Fuel Type is required.
+        </div>
+    </div>
+    <div *ngIf="newProductForm.controls['hp'].invalid && (newProductForm.controls['hp'].dirty || newProductForm.controls['hp'].touched)"
+        class="alert alert-warning">
+        <div *ngIf="newProductForm.controls['hp'].errors?.['required']">
+            HP is required.
+        </div>
+    </div>
+    <div *ngIf="newProductForm.controls['engine'].invalid && (newProductForm.controls['engine'].dirty || newProductForm.controls['engine'].touched)"
+        class="alert alert-warning">
+        <div *ngIf="newProductForm.controls['engine'].errors?.['required']">
+            Engine is required.
+        </div>
+    </div>
+
+    <div *ngIf="newProductForm.controls['price'].invalid && (newProductForm.controls['price'].dirty || newProductForm.controls['price'].touched)"
+        class="alert alert-warning">
+        <div *ngIf="newProductForm.controls['price'].errors?.['required']">
+            Price is required.
+        </div>
+    </div>
+
+    <div *ngIf="newProductForm.controls['year'].invalid && (newProductForm.controls['year'].dirty || newProductForm.controls['year'].touched)"
+        class="alert alert-warning">
+        <div *ngIf="newProductForm.controls['year'].errors?.['required']">
+            Year is required.
+        </div>
+    </div>
+    <h3>Add new product</h3>
+    <!-- Create form to add a new product -->
+    <!-- ngSubmit -> event ca trimite datele mai departe -->
+    <form [formGroup]="newProductForm" action="" (ngSubmit)="submitFormData()">
+        <div class="form-group col-sm-4">
+            <label for="brand">Brand</label>
+            <input formControlName="brand" type="text" class="form-control">
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="model">Model</label>
+            <input formControlName="model" type="text" class="form-control">
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="fuelType">Fuel Type</label>
+            <input formControlName="fuelType" type="text" class="form-control">
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="hp">HP</label>
+            <input formControlName="hp" type="text" class="form-control">
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="engine">Engine</label>
+            <input formControlName="engine" type="text" class="form-control">
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="year">Year</label>
+            <input formControlName="year" type="text" class="form-control">
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="price">Price</label>
+            <input formControlName="price" type="number" class="form-control">
+        </div>
+        <button class="btn btn-success" id="btn-save" type="submit" [disabled]="newProductForm.invalid">Save</button>
+    </form>
+</div>
