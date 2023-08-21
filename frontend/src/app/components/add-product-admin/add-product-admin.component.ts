@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class AddProductAdminComponent implements OnInit{
 
   newProductForm!: FormGroup;
+brand: any;
 
   constructor(private productService: ProductService) { }
 
@@ -35,3 +36,7 @@ export class AddProductAdminComponent implements OnInit{
   }
 
 }
+function forbiddenNameValidator(arg0: RegExp): import("@angular/forms").ValidatorFn {
+  throw new Error('Function not implemented.');
+}
+

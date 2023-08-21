@@ -11,6 +11,9 @@ import { AddProductAdminComponent } from './components/add-product-admin/add-pro
 import { UpdateProductAdminComponent } from './components/update-product-admin/update-product-admin.component';
 import { TwoHundredEightComponent } from './components/all-models/two-hundred-eight/two-hundred-eight.component';
 import { TwoThousandEightComponent } from './components/all-models/two-thousand-eight/two-thousand-eight.component';
+import { ThreeHundredEightComponent } from './components/all-models/three-hundred-eight/three-hundred-eight.component';
+import { FourHundredEightComponent } from './components/all-models/four-hundred-eight/four-hundred-eight.component';
+import { HistoryComponent } from './components/history/history.component';
 
 const routes: Routes = [
   {
@@ -24,6 +27,10 @@ const routes: Routes = [
   {
     path: "",
     component: FooterComponent
+  },
+  {
+    path: "history",
+    component: HistoryComponent
   },
   {
     path: "models",
@@ -52,8 +59,17 @@ const routes: Routes = [
   {
     path: "models/2008",
     component: TwoThousandEightComponent
+  },
+  {
+    path: "models/308",
+    component: ThreeHundredEightComponent
+  },
+  {
+    path: "models/408",
+    component: FourHundredEightComponent
   }
 
+  
 ];
 
 @NgModule({

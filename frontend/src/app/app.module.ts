@@ -15,6 +15,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateProductAdminComponent } from './components/update-product-admin/update-product-admin.component';
 import { TwoHundredEightComponent } from './components/all-models/two-hundred-eight/two-hundred-eight.component';
 import { TwoThousandEightComponent } from './components/all-models/two-thousand-eight/two-thousand-eight.component';
+import { ThreeHundredEightComponent } from './components/all-models/three-hundred-eight/three-hundred-eight.component';
+import { FourHundredEightComponent } from './components/all-models/four-hundred-eight/four-hundred-eight.component';
+import { HistoryComponent } from './components/history/history.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { TwoThousandEightComponent } from './components/all-models/two-thousand-
     AddProductAdminComponent,
     UpdateProductAdminComponent,
     TwoHundredEightComponent,
-    TwoThousandEightComponent
+    TwoThousandEightComponent,
+    ThreeHundredEightComponent,
+    FourHundredEightComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
