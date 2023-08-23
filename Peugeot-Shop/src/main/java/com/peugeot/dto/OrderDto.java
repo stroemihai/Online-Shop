@@ -2,7 +2,6 @@ package com.peugeot.dto;
 
 import com.peugeot.model.Client;
 import com.peugeot.model.Product;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,7 +17,9 @@ public class OrderDto {
     private Integer order_no;
     private String order_name;
     private Integer quantity;
-    private List<ProductDto> productsDto;
+    private List<Product> products;
+    private List<Client> clients;
+
 
     public OrderDto(LocalDate date_order, Integer order_no, String order_name, Integer quantity) {
         this.date_order = date_order;
@@ -27,11 +28,19 @@ public class OrderDto {
         this.quantity = quantity;
     }
 
-    public List<ProductDto> getProductDto(){
-        if (productsDto == null){
-            productsDto = new ArrayList<>();
+    public List<Product> getProducts(){
+        if (products == null){
+            products = new ArrayList<>();
         }
 
-        return productsDto;
+        return products;
+    }
+
+    public List<Client> getClients(){
+        if (clients == null){
+            clients = new ArrayList<>();
+        }
+
+        return clients;
     }
 }

@@ -36,4 +36,6 @@ public class Client {
     @Column(name = "client_email", nullable = false)
     private String email;
 
+    @OneToMany(mappedBy = "client")
+    private List<Order> order;
 }
