@@ -18,6 +18,7 @@ import { TwoThousandEightComponent } from './components/all-models/two-thousand-
 import { ThreeHundredEightComponent } from './components/all-models/three-hundred-eight/three-hundred-eight.component';
 import { FourHundredEightComponent } from './components/all-models/four-hundred-eight/four-hundred-eight.component';
 import { HistoryComponent } from './components/history/history.component';
+import { ClientsComponent } from './components/clients/clients.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { HistoryComponent } from './components/history/history.component';
     TwoThousandEightComponent,
     ThreeHundredEightComponent,
     FourHundredEightComponent,
-    HistoryComponent
+    HistoryComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,
