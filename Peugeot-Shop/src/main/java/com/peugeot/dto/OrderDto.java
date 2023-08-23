@@ -18,22 +18,20 @@ public class OrderDto {
     private Integer order_no;
     private String order_name;
     private Integer quantity;
-//    private List<ProductDto> productsDto;
-//    private ClientDto clientDto;
+    private List<ProductDto> productsDto;
 
     public OrderDto(LocalDate date_order, Integer order_no, String order_name, Integer quantity) {
         this.date_order = date_order;
         this.order_no = order_no;
         this.order_name = order_name;
         this.quantity = quantity;
-//        this.clientDto = clientDto;
     }
 
-//    public List<ProductDto> getProductDto(){
-//        if (productsDto == null){
-//            productsDto = new ArrayList<>();
-//        }
-//
-//        return productsDto;
-//    }
+    public List<ProductDto> getProductDto(){
+        if (productsDto == null){
+            productsDto = new ArrayList<>();
+        }
+
+        return productsDto;
+    }
 }

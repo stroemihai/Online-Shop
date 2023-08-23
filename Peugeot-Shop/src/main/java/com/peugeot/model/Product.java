@@ -3,16 +3,13 @@ package com.peugeot.model;
 import com.peugeot.enums.FuelType;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.List;
 import java.util.Set;
 
 @Entity
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Table(name = "products")
 public class Product {
@@ -44,7 +41,8 @@ public class Product {
     @Column(name = "product_price", nullable = false)
     private Double price;
 
-    @ManyToMany(mappedBy = "products", fetch = FetchType.LAZY)
+
+    @ManyToMany(mappedBy = "products")
     private List<Order> orders;
 
 }

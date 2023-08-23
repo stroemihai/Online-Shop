@@ -16,7 +16,6 @@ public class ClientDto {
     private String address;
     private String phone;
     private String email;
-//    private List<Order> orders;
 
 
     public ClientDto(String firstName, String lastName, String address, String phone, String email) {
