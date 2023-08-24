@@ -2,14 +2,8 @@ package com.peugeot.service.impl;
 
 import com.peugeot.dto.ClientDto;
 import com.peugeot.exception.ClientNotFoundException;
-import com.peugeot.exception.OrderNotFoundException;
-import com.peugeot.exception.ProductNotFoundException;
 import com.peugeot.model.Client;
-import com.peugeot.model.Order;
-import com.peugeot.model.Product;
 import com.peugeot.repository.ClientRepository;
-import com.peugeot.repository.OrderRepository;
-import com.peugeot.repository.ProductRepository;
 import com.peugeot.service.ClientService;
 import com.peugeot.utils.EntityDtoConvertor;
 import lombok.RequiredArgsConstructor;

@@ -3,7 +3,6 @@ package com.peugeot.controller;
 import com.peugeot.dto.OrderDto;
 import com.peugeot.service.OrderService;
 import lombok.AllArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,11 +29,5 @@ public class OrderController {
     public ResponseEntity<List<OrderDto>> getAllOrders(){
         List<OrderDto> allOrders = orderService.getAllOrders();
         return ResponseEntity.ok(allOrders);
-    }
-
-    @GetMapping("/assignClient")
-    public ResponseEntity<String> assignClient(@RequestParam @NotNull Integer orderId,
-                                               @RequestParam @NotNull Integer clientId){
-        return ResponseEntity.ok(orderService.assignOrder(orderId, clientId));
     }
 }

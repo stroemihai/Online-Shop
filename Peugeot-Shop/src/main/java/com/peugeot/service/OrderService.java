@@ -15,6 +15,4 @@ public interface OrderService {
     OrderDto updateOrderById(OrderDto orderDto, Integer id);
 
     void deleteOrderById(Integer id);
-
-    String assignOrder(Integer orderId, Integer clientId);
 }

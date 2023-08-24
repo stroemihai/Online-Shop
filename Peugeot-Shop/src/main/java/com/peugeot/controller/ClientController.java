@@ -2,16 +2,14 @@ package com.peugeot.controller;
 
 import com.peugeot.dto.ClientDto;
 import com.peugeot.service.ClientService;
-import com.peugeot.utils.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController //Controller + ResponseBody -> ne returneaza raspunsul in format JSON
+@RestController
 @RequestMapping("/api/v1/clients")
 @RequiredArgsConstructor
 public class ClientController {
@@ -20,7 +18,7 @@ public class ClientController {
 
     @PostMapping(value = "/addClient")
     public ResponseEntity<ClientDto> saveClient(@RequestBody ClientDto clientDto){
-        //cream produsul
+        //product creation
         ClientDto savedClient = clientService.saveClient(clientDto);
 
         return ResponseEntity.status(HttpStatus.CREATED)

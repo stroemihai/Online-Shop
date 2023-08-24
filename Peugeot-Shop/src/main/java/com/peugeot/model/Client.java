@@ -1,7 +1,5 @@
 package com.peugeot.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,6 +34,7 @@ public class Client {
     @Column(name = "client_email", nullable = false)
     private String email;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "client_id", referencedColumnName = "client_id")
     private List<Order> order;
 }

@@ -33,7 +33,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDto saveProduct(ProductDto productDto) {
-//        List<Product> products = productDto.getProductsDto().stream().map(EntityDtoConvertor::toEntity).toList();
         Product product = EntityDtoConvertor.toEntity(productDto);
         Product savedProduct = productRepository.save(product);
         return EntityDtoConvertor.toDto(savedProduct);
