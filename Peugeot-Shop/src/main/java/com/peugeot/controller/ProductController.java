@@ -29,14 +29,14 @@ public class ProductController {
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     }
 
-    @GetMapping("/{productId}")
+    @GetMapping("/getProductById/{productId}")
     public ResponseEntity<ProductDto> getProductById(@PathVariable("productId") Integer productId){
         ProductDto productById = productService.getProductById(productId);
 
         return new ResponseEntity<>(productById, HttpStatus.OK);
     }
 
-    @PutMapping("/{productId}")
+    @PutMapping("/updateProduct/{productId}")
     public ResponseEntity<ProductDto> updateProduct(@PathVariable("productId") Integer productId,
                                                     @RequestBody ProductDto productDto){
         ProductDto updatedProduct = productService.updateProductById(productDto, productId);
@@ -46,7 +46,7 @@ public class ProductController {
                 .body(updatedProduct);
     }
 
-    @DeleteMapping("/{productId}")
+    @DeleteMapping("/deleteProductById/{productId}")
     public ResponseEntity<Void> deleteProductById(@PathVariable("productId") Integer productId){
         productService.deleteProductById(productId);
         return ResponseEntity.noContent().header("message", "Product deleted successfully.").build();

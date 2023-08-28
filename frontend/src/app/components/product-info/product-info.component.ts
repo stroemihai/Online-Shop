@@ -8,7 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './product-info.component.html',
   styleUrls: ['./product-info.component.scss']
 })
-export class ProductInfoComponent implements OnInit{
+export class ProductInfoComponent implements OnInit {
   id!: number;
   productData!: Product
 
@@ -20,7 +20,7 @@ export class ProductInfoComponent implements OnInit{
     this.getProductInfo();
   }
 
-  getProductInfo(){
+  getProductInfo() {
     this.id = this.activatedRoute.snapshot.params['productId'];
     this.productService.getProductById(this.id).subscribe((prod: Product) => {
       this.productData = prod;

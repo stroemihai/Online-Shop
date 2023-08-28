@@ -19,27 +19,27 @@ export class ClientsService {
   constructor(private httpClient: HttpClient) { }
 
   // HTTP GET REQUEST
-  getAllProducts():Observable<Clients[]>{
+  getAllClients():Observable<Clients[]>{
     return this.httpClient.get<Clients[]>(this.serverBaseUrl + "/getAllClients");
   }
 
   // HTTP GET BY ID REQUEST [ex: Product Info Page] -> incarcam informatiile dupa ID
-  getProductById(id:any):Observable<Clients>{
-    return this.httpClient.get<Clients>(this.serverBaseUrl + "/" + id)
+  getClientById(id:any):Observable<Clients>{
+    return this.httpClient.get<Clients>(this.serverBaseUrl + "/getClientById/" + id)
   }
 
   // HTTP POST REQUEST [ex: Add New Product]
-  createProduct(clients: any): Observable<Clients>{
+  createClient(clients: any): Observable<Clients>{
     return this.httpClient.post<Clients>(this.serverBaseUrl + "/addClient", JSON.stringify(clients), this.httpOptions)
   }
 
   // HTTP PUT REQUEST
-  updateProductById(id:any, clients:any): Observable<Clients>{
-    return this.httpClient.put<Clients>(this.serverBaseUrl + "/" + id, JSON.stringify(clients), this.httpOptions);
+  updateClientById(id:any, clients:any): Observable<Clients>{
+    return this.httpClient.put<Clients>(this.serverBaseUrl + "/updateClient/" + id, JSON.stringify(clients), this.httpOptions);
   }
 
   // HTTP DELETE REQUEST
-  deleteProductById(id:number):Observable<Clients>{
-    return this.httpClient.delete<Clients>(this.serverBaseUrl + "/" + id);
+  deleteClientById(id:number):Observable<Clients>{
+    return this.httpClient.delete<Clients>(this.serverBaseUrl + "/deleteClientById/" + id);
   }
 }

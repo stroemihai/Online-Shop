@@ -9,16 +9,16 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './update-product-admin.component.html',
   styleUrls: ['./update-product-admin.component.scss']
 })
-export class UpdateProductAdminComponent implements OnInit{
+export class UpdateProductAdminComponent implements OnInit {
   updateProductForm!: FormGroup
   id!: number;
-  product!:Product
+  product!: Product
 
-  constructor(private productService:ProductService, private activatedRoute:ActivatedRoute, private router:Router){}
+  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['productId'];
-    this.productService.getProductById(this.id).subscribe((data)=>{
+    this.productService.getProductById(this.id).subscribe((data) => {
       this.product = data;
     })
 
@@ -30,12 +30,12 @@ export class UpdateProductAdminComponent implements OnInit{
       engine: new FormControl('', [Validators.required]),
       year: new FormControl('', [Validators.required]),
       price: new FormControl('', [Validators.required])
-    }) 
+    })
   }
 
-  updatedFormSubmit(){
+  updatedFormSubmit() {
     console.log("Input value is: " + this.updateProductForm.value)
-    this.productService.updateProductById(this.id, this.updateProductForm.value).subscribe(data =>{
+    this.productService.updateProductById(this.id, this.updateProductForm.value).subscribe(data => {
       console.log("Product data updated successfully.")
       this.router.navigateByUrl('/admin');
     })

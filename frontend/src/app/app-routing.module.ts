@@ -15,6 +15,8 @@ import { ThreeHundredEightComponent } from './components/all-models/three-hundre
 import { FourHundredEightComponent } from './components/all-models/four-hundred-eight/four-hundred-eight.component';
 import { HistoryComponent } from './components/history/history.component';
 import { ClientsComponent } from './components/clients/clients.component';
+import { ClientInfoComponent } from './components/client-info/client-info.component';
+import { UpdateClientAdminComponent } from './components/update-client-admin/update-client-admin.component';
 
 const routes: Routes = [
   {
@@ -40,6 +42,10 @@ const routes: Routes = [
   {
     path: "products",
     component: ProductsComponent
+  },
+  {
+    path: "clients",
+    component: ClientsComponent
   },
   {
     path: "product/info/:productId",
@@ -70,8 +76,12 @@ const routes: Routes = [
     component: FourHundredEightComponent
   },
   {
-    path: "clients",
-    component: ClientsComponent
+    path: "clients/info/:clientId",
+    component: ClientInfoComponent
+  },
+  {
+    path: "clients/edit/:clientId",
+    component: UpdateClientAdminComponent
   }
   
 ];

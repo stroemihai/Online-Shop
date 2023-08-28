@@ -31,13 +31,13 @@ public class ClientController {
         return new ResponseEntity<>(clientService.getAllClients(), HttpStatus.OK);
     }
 
-    @GetMapping("/{clientId}")
+    @GetMapping("/getClientById/{clientId}")
     public ResponseEntity<ClientDto> getClientById(@PathVariable("clientId") Integer clientId){
         ClientDto clientById = clientService.getClientById(clientId);
         return new ResponseEntity<>(clientById, HttpStatus.OK);
     }
 
-    @PutMapping("/{clientId}")
+    @PutMapping("/updateClient/{clientId}")
     public ResponseEntity<ClientDto> updateClient(@PathVariable("clientId") Integer clientId, @RequestBody ClientDto clientDto){
         ClientDto updatedClient = clientService.updateClientById(clientDto, clientId);
         return ResponseEntity
@@ -46,7 +46,7 @@ public class ClientController {
                 .body(updatedClient);
     }
 
-    @DeleteMapping("/{clientId}")
+    @DeleteMapping("/deleteClientById/{clientId}")
     public ResponseEntity<Void> deleteClientById(@PathVariable("clientId") Integer clientId){
         clientService.deleteClientById(clientId);
         return ResponseEntity.noContent().header("message", "Client deleted successfully.").build();

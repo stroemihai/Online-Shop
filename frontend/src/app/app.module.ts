@@ -19,6 +19,8 @@ import { ThreeHundredEightComponent } from './components/all-models/three-hundre
 import { FourHundredEightComponent } from './components/all-models/four-hundred-eight/four-hundred-eight.component';
 import { HistoryComponent } from './components/history/history.component';
 import { ClientsComponent } from './components/clients/clients.component';
+import { ClientInfoComponent } from './components/client-info/client-info.component';
+import { UpdateClientAdminComponent } from './components/update-client-admin/update-client-admin.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { ClientsComponent } from './components/clients/clients.component';
     ThreeHundredEightComponent,
     FourHundredEightComponent,
     HistoryComponent,
-    ClientsComponent
+    ClientsComponent,
+    ClientInfoComponent,
+    UpdateClientAdminComponent
   ],
   imports: [
     BrowserModule,

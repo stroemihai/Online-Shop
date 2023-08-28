@@ -23,9 +23,10 @@ export class ProductService {
     return this.httpClient.get<Product[]>(this.serverBaseUrl + "/allProducts");
   }
 
+  // get product by id
   // HTTP GET BY ID REQUEST [ex: Product Info Page] -> incarcam informatiile dupa ID
   getProductById(id: any): Observable<Product> {
-    return this.httpClient.get<Product>(this.serverBaseUrl + "/" + id)
+    return this.httpClient.get<Product>(this.serverBaseUrl + "/getProductById/" + id)
   }
 
   // HTTP POST REQUEST [ex: Add New Product]
@@ -33,13 +34,14 @@ export class ProductService {
     return this.httpClient.post<Product>(this.serverBaseUrl + "/addProduct", JSON.stringify(product), this.httpOptions)
   }
 
+  // update product
   // HTTP PUT REQUEST
   updateProductById(id: any, product: any): Observable<Product> {
-    return this.httpClient.put<Product>(this.serverBaseUrl + "/" + id, JSON.stringify(product), this.httpOptions);
+    return this.httpClient.put<Product>(this.serverBaseUrl + "/updateProduct/" + id, JSON.stringify(product), this.httpOptions);
   }
 
   // HTTP DELETE REQUEST
   deleteProductById(id: number): Observable<Product> {
-    return this.httpClient.delete<Product>(this.serverBaseUrl + "/" + id);
+    return this.httpClient.delete<Product>(this.serverBaseUrl + "/deleteProductById/" + id);
   }
 }
