@@ -35,7 +35,7 @@ public class SecurityConfig {
                 .password(bCryptPasswordEncoder().encode("1234")).roles(ROLE_USER).build());
 
         manager.createUser(User.withUsername("admin")
-                .password(bCryptPasswordEncoder().encode("1234")).roles(ROLE_ADMIN,ROLE_USER).build());
+                .password(bCryptPasswordEncoder().encode("1234")).roles(ROLE_ADMIN, ROLE_USER).build());
 
 
 
@@ -48,7 +48,6 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/api/v1/products/addProduct").hasRole(ROLE_ADMIN);
-                    auth.requestMatchers("/api/v1/products/allProducts").hasRole(ROLE_USER);
                     auth.requestMatchers("/api/v1/products/allProducts").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/products/getProductById/{productId}").hasRole(ROLE_USER);
                     auth.requestMatchers("/api/v1/products/getProductById/{productId}").hasRole(ROLE_ADMIN);
@@ -62,8 +61,12 @@ public class SecurityConfig {
                     auth.requestMatchers("/api/v1/clients/deleteClientById/{clientId}").hasRole(ROLE_ADMIN);
 
                     auth.requestMatchers("/api/v1/orders/createOrder").hasRole(ROLE_ADMIN);
+                    auth.requestMatchers("/api/v1/orders/getOrderById/{orderId}").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/orders/getAllOrders").hasRole(ROLE_ADMIN);
+                    auth.requestMatchers("/api/v1/orders/updateOrderById/{orderId}").hasRole(ROLE_ADMIN);
+                    auth.requestMatchers("/api/v1/orders/deleteOrderById/{orderId}").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/orders/assignClient").hasRole(ROLE_ADMIN);
+
                 }).httpBasic(Customizer.withDefaults());
 
         return httpSecurity.build();

@@ -14,6 +14,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonFormat(shape = JsonFormat.Shape.ARRAY)
 @Table(name = "orders")
 public class Order {
 
@@ -34,10 +35,12 @@ public class Order {
     @Column(name = "order_quantity", nullable = false)
     private Integer quantity;
 
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "client_id")
     private Client client;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "order_product",
             joinColumns = @JoinColumn(name = "order_id"),

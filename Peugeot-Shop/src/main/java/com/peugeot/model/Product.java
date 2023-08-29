@@ -1,7 +1,9 @@
 package com.peugeot.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.peugeot.enums.FuelType;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +12,8 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@JsonFormat(shape = JsonFormat.Shape.ARRAY)
 @Table(name = "products")
 public class Product {
 

@@ -38,7 +38,8 @@ public class ClientController {
     }
 
     @PutMapping("/updateClient/{clientId}")
-    public ResponseEntity<ClientDto> updateClient(@PathVariable("clientId") Integer clientId, @RequestBody ClientDto clientDto){
+    public ResponseEntity<ClientDto> updateClient(@PathVariable("clientId") Integer clientId,
+                                                  @RequestBody ClientDto clientDto){
         ClientDto updatedClient = clientService.updateClientById(clientDto, clientId);
         return ResponseEntity
                 .status(HttpStatus.OK)
