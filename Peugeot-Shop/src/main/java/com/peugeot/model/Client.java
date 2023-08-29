@@ -1,5 +1,7 @@
 package com.peugeot.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,6 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonFormat(shape = JsonFormat.Shape.ARRAY)
 @Table(name = "clients")
 public class Client {
 

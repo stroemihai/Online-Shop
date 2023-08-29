@@ -35,7 +35,7 @@ public class SecurityConfig {
                 .password(bCryptPasswordEncoder().encode("1234")).roles(ROLE_USER).build());
 
         manager.createUser(User.withUsername("admin")
-                .password(bCryptPasswordEncoder().encode("1234")).roles(ROLE_ADMIN, ROLE_USER).build());
+                .password(bCryptPasswordEncoder().encode("1234")).roles(ROLE_ADMIN,ROLE_USER).build());
 
 
 
@@ -60,7 +60,12 @@ public class SecurityConfig {
                     auth.requestMatchers("/api/v1/clients/getClientById/{clientId}").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/clients/updateClient/{clientId}").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/clients/deleteClientById/{clientId}").hasRole(ROLE_ADMIN);
+
+                    auth.requestMatchers("/api/v1/orders/createOrder").hasRole(ROLE_ADMIN);
+                    auth.requestMatchers("/api/v1/orders/getAllOrders").hasRole(ROLE_ADMIN);
+                    auth.requestMatchers("/api/v1/orders/assignClient").hasRole(ROLE_ADMIN);
                 }).httpBasic(Customizer.withDefaults());
+
         return httpSecurity.build();
 
     }

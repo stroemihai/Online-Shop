@@ -41,7 +41,7 @@ public class Product {
     private Double price;
 
 
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL)
     private List<Order> orders;
 
 }

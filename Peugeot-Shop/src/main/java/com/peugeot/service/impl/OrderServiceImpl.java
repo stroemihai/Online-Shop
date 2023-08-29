@@ -1,7 +1,9 @@
 package com.peugeot.service.impl;
 
 import com.peugeot.dto.OrderDto;
+import com.peugeot.exception.ClientNotFoundException;
 import com.peugeot.exception.OrderNotFoundException;
+import com.peugeot.model.Client;
 import com.peugeot.model.Order;
 import com.peugeot.repository.ClientRepository;
 import com.peugeot.repository.OrderRepository;
@@ -63,16 +65,16 @@ public class OrderServiceImpl implements OrderService {
         orderRepository.deleteById(id);
     }
 
-//    @Override
-//    public String assignOrder(Integer orderId, Integer clientId) {
-//        Order order = orderRepository.findById(orderId)
-//                .orElseThrow(() -> new OrderNotFoundException(String.format("Order %s not found", orderId)));
-//
-//        Client client = clientRepository.findById(clientId)
-//                .orElseThrow(() -> new ClientNotFoundException(String.format("Client %s not found", clientId)));
-//
-//        order.setClient(client);
-//        orderRepository.save(order);
-//        return String.format("Order %s has been assigned to client %s %s", order.getOrder_name(), client.getFirstName(), client.getLastName());
-//    }
+    @Override
+    public String assignClient(Integer clientId, Integer orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new OrderNotFoundException(String.format("Order %s not found", orderId)));
+
+        Client client = clientRepository.findById(clientId)
+                .orElseThrow(() -> new ClientNotFoundException(String.format("Client %s not found", clientId)));
+
+        order.setClient(client);
+        orderRepository.save(order);
+        return String.format("Order %s has been assigned to client %s %s", order.getOrder_name(), client.getFirstName(), client.getLastName());
+    }
 }
