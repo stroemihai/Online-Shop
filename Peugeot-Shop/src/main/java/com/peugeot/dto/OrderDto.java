@@ -1,9 +1,7 @@
 package com.peugeot.dto;
 
 import com.peugeot.model.Product;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
