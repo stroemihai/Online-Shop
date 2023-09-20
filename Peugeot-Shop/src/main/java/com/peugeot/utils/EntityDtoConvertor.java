@@ -20,7 +20,6 @@ public class EntityDtoConvertor {
         return modelMapper.map(client, ClientDto.class);
     }
 
-    //Order
     public static Order toEntity(OrderDto orderDto){
         return modelMapper.map(orderDto, Order.class);
     }
@@ -29,7 +28,6 @@ public class EntityDtoConvertor {
         return modelMapper.map(order, OrderDto.class);
     }
 
-    // Product
     public static Product toEntity(ProductDto productDto){
         return modelMapper.map(productDto, Product.class);
     }

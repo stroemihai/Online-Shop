@@ -35,7 +35,7 @@ public class SecurityConfig {
                 .password(bCryptPasswordEncoder().encode("1234")).roles(ROLE_USER).build());
 
         manager.createUser(User.withUsername("admin")
-                .password(bCryptPasswordEncoder().encode("1234")).roles(ROLE_ADMIN, ROLE_USER).build());
+                .password(bCryptPasswordEncoder().encode("1234")).roles(ROLE_ADMIN).build());
 
 
 
@@ -49,7 +49,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/api/v1/products/addProduct").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/products/allProducts").hasRole(ROLE_ADMIN);
-                    auth.requestMatchers("/api/v1/products/getProductById/{productId}").hasRole(ROLE_USER);
+//                    auth.requestMatchers("/api/v1/products/getProductById/{productId}").hasRole(ROLE_USER);
                     auth.requestMatchers("/api/v1/products/getProductById/{productId}").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/products/updateProduct/{productId}").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/products/deleteProductById/{productId}").hasRole(ROLE_ADMIN);

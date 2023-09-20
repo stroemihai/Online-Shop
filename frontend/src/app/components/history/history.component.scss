@@ -1,11 +1,32 @@
 .first-slide {
-    image-resolution: 100%;
     position: relative;
     margin-right: 0px;
     margin-left: 0px;
 }
 
-.text {
-    text-align: left;
-    margin-right: 1000px;
+.text-container {
+    text-align: center;
+}
+
+.app{
+    font-family: sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.years{
+    text-align: center;
+    font-size: 250%;
+}
+
+.text1{
+    text-align: center;
+    font-size: 150%;
+}
+
+.text2{
+    text-align: center;
+    width: 800px;
 }

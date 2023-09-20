@@ -18,7 +18,11 @@ public class ProductDto {
     private Integer year;
     private Double price;
 
-    public ProductDto(String brand, String model, FuelType fuelType, Integer hp, String engine, Integer year, Double price) {
+    public ProductDto(String brand, String model,
+                      FuelType fuelType,
+                      Integer hp, String engine,
+                      Integer year, Double price) {
+
         this.brand = brand;
         this.model = model;
         this.fuelType = fuelType;
@@ -28,3 +32,6 @@ public class ProductDto {
         this.price = price;
     }
 }
+
+
+

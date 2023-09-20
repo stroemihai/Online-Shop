@@ -25,7 +25,8 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public ClientDto getClientById(Integer id) {
-        Client client = clientRepository.findById(id).orElseThrow(() -> new ClientNotFoundException("Client not found with id: " + id));
+        Client client = clientRepository.findById(id)
+                .orElseThrow(() -> new ClientNotFoundException("Client not found with id: " + id));
         return EntityDtoConvertor.toDto(client);
     }
 

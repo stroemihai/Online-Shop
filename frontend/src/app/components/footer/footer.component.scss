@@ -1,12 +1,22 @@
-html,
-body {
-  height: 100%;
-}
+// html,
+// body {
+//   height: 100%;
+// }
 
-#page-content {
-  flex: 1 0 auto;
-}
+// body {
+//   min-height: 100vh;
+//   display: grid;
+//   grid-template-rows: 1fr auto;
+// }
 
 footer {
-  bottom: 0px;
+  margin-top: auto;
+}
+
+.flex-wrapper {
+  display: flex;
+  // min-height: 100vh;
+  flex-direction: column;
+  // justify-content: flex-start;
+  min-height: 100%;
 }

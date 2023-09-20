@@ -25,9 +25,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDto getProductById(Integer id) {
-        Product product = productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
+        Product product = productRepository.findById(id).
+                orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
 
-        //metoda intoarce un DTO si trebuie convertit la DTO
         return EntityDtoConvertor.toDto(product);
     }
 
@@ -40,7 +40,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDto updateProductById(ProductDto productDto, Integer id) {
-        Product product = productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
+        Product product = productRepository.findById(id).
+                orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
+
         product.setBrand(productDto.getBrand());
         product.setModel(productDto.getModel());
         product.setFuelType(productDto.getFuelType());
@@ -55,7 +57,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteProductById(Integer id) {
-        productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
+        productRepository.findById(id).
+                orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
+
         productRepository.deleteById(id);
     }
 }

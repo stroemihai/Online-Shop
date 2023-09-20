@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class AddProductAdminComponent implements OnInit{
 
   newProductForm!: FormGroup;
-brand: any;
+  brand: any;
 
   constructor(private productService: ProductService) { }
 
@@ -27,7 +27,6 @@ brand: any;
 
   }
 
-  // definim functia de save product
   submitFormData() {
     this.productService.createProduct(this.newProductForm.value).subscribe(data => {
       this.newProductForm.reset();
