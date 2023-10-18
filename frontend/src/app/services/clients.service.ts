@@ -12,7 +12,7 @@ export class ClientsService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json' // datele trimise mai departe catre server sunt in format JSON
+      'Content-Type': 'application/json' 
     })
   }
 

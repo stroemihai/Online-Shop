@@ -49,7 +49,6 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/api/v1/products/addProduct").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/products/allProducts").hasRole(ROLE_ADMIN);
-//                    auth.requestMatchers("/api/v1/products/getProductById/{productId}").hasRole(ROLE_USER);
                     auth.requestMatchers("/api/v1/products/getProductById/{productId}").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/products/updateProduct/{productId}").hasRole(ROLE_ADMIN);
                     auth.requestMatchers("/api/v1/products/deleteProductById/{productId}").hasRole(ROLE_ADMIN);

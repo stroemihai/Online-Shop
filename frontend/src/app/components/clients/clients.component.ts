@@ -15,14 +15,14 @@ export class ClientsComponent implements OnInit{
   ngOnInit(): void {
     this.clientsService.getAllClients().subscribe((data:Clients[]) => {
       this.clientsList = data;
-      console.log("Products List: " + JSON.stringify(this.clientsList)); 
+      console.log("Clients List: " + JSON.stringify(this.clientsList)); 
     })
   }
 
   removeProductById(id:number){
     this.clientsService.deleteClientById(id).subscribe((data)=>{
       this.clientsList = this.clientsList.filter(prod => prod.id !== id);
-      console.log("Product with id " + id + " deleted successfully.");
+      console.log("Client with id " + id + " deleted successfully.");
     })
   }
 }
